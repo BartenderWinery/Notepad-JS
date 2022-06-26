@@ -1,0 +1,9 @@
+body{margin:0;background:#383838;overflow:hidden;font-size:10px;color:rgb(204,204,204);font-family:consolas}
+#titlebar{width:100vw;height:15px;-webkit-app-region:drag;display:flex;align-items:flex-start;justify-content:flex-end;background:#525252}
+.titlebar{height:15px;width:15px;-webkit-app-region:no-drag;opacity:50%;cursor:pointer;display:flex}
+.titlebar:hover{opacity:100%}
+svg{place-self:center;stroke-width:0.5px}
+p{margin:2.5px}
+#lines{display:none;height:100%;width:10px}
+textarea{background-color:transparent;border:none;color:rgb(204,204,204);padding:0px;font-family:consolas;width:-webkit-fill-available;height:-webkit-fill-available;font-size:inherit;resize:none;overflow:hidden}
+textarea:focus{outline:none}

@@ -1,0 +1,16 @@
+{
+  "name": "notepad-js",
+  "version": "1.0.0",
+  "description": "Electron based Notepad, clean and simple with modding support.",
+  "main": "main.js",
+  "auther": "bartender",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^19.0.6"
+  },
+  "dependencies": {
+    "electron-reload": "^2.0.0-alpha.1"
+  }
+}
