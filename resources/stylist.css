@@ -5,5 +5,5 @@ body{margin:0;background:#383838;overflow:hidden;font-size:10px;color:rgb(204,20
 svg{place-self:center;stroke-width:0.5px}
 p{margin:2.5px}
 #lines{display:none;height:100%;width:10px}
-textarea{background-color:transparent;border:none;color:rgb(204,204,204);padding:0px;font-family:consolas;width:-webkit-fill-available;height:-webkit-fill-available;font-size:inherit;resize:none;overflow:hidden}
-textarea:focus{outline:none}
+.input{background-color:transparent;border:none;color:rgb(204,204,204);padding:0px;font-family:consolas;width:-webkit-fill-available;height:-webkit-fill-available;font-size:inherit;resize:none;overflow:hidden}
+.input:focus{outline:none}
