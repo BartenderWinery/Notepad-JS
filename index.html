@@ -17,5 +17,18 @@
             <div id="lines"></div>
             <textarea></textarea>
         </div>    
+        <script>
+            function AddEvent(object,id,func){
+                if(object.attachEvent)object.attachEvent("on"+id,function(){func.call(object)})
+                else if(object.addEventListener)object.addEventListener(id,func,false)}
+            AddEvent(window,'keydown',function(e){
+                switch(e.keyCode){
+                    case e.ctrlKey&&83:
+                        console.group("Saving")
+                            console.info("Saving in progress...")
+                            console.info("Saving completed.")
+                        console.groupEnd()
+                        break}})
+        </script>
     </body>
 </html>
