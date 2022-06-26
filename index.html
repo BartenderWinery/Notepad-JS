@@ -18,7 +18,7 @@
             <div id="lines"></div>
             <textarea class="input"></textarea>
         </div>    
-        <p style="display:none;color:rgb(204,204,204);margin:0px;font-family:consolas;position: absolute;bottom:0">/><input class="input" spellcheck="false"></input></p>
+        <p style="display:none;color:rgb(204,204,204);margin:0px;font-family:consolas;position: absolute;bottom:0;width:100%">/><input class="input" spellcheck="false"></input></p>
         <script defer src="resources/system.js"></script>
         <script>
             function AddEvent(object,id,func){
@@ -28,7 +28,7 @@
                 console.log(e.keyCode)
                 switch(e.keyCode){
                     case 13:
-                        p.children[0].value=""
+                        if(document.activeElement==p.children[0])eval(p.children[0].value)
                         break
                     case e.ctrlKey&&81:
                         cmd.toggle()
