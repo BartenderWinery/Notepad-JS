@@ -21,6 +21,7 @@
         <p style="display:none;color:rgb(204,204,204);margin:0px;font-family:consolas;position: absolute;bottom:0;width:100%">/><input class="input" spellcheck="false"></input></p>
         <script defer src="resources/system.js"></script>
         <script>
+            var file={"name":"-Not saved-","data":""}
             function AddEvent(object,id,func){
                 if(object.attachEvent)object.attachEvent("on"+id,function(){func.call(object)})
                 else if(object.addEventListener)object.addEventListener(id,func,false)}
@@ -34,7 +35,7 @@
                         cmd.toggle()
                         break
                     case e.ctrlKey&&83:
-                        window.api.send("save")
+                        window.api.send("save",file)
                         break}})
         </script>
     </body>

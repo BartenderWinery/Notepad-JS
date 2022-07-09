@@ -2,7 +2,6 @@ const{app,BrowserWindow,ipcMain}=require("electron")
 //require("electron-reload")(__dirname)
 require("electron-reload")(__dirname, {
     electron:require(`${__dirname}/node_modules/electron`)})
-const path=require("path")
 const fs=require("fs")
 //Important. Clean up imports so it doesn't slow down loading times.
 
@@ -18,8 +17,8 @@ function popout(bounds,page){
             nodeIntegration:false,
             contextIsolation:true,
             enableRemoteModule:false,
-            preload:path.join(__dirname,"resources/preload.js")}})
-        win[win.length-1].loadFile(path.join(__dirname,page))
+            preload:(__dirname+"/resources/preload.js")}})
+        win[win.length-1].loadFile(__dirname+"/"+page)
         setTimeout(function(){win[win.length-1].show()}),500}
 async function main(){popout([580,300],"index.html")}
 app.on("ready",main)
@@ -31,13 +30,12 @@ ipcMain.on("save",(events,args)=>{
     win=BrowserWindow.getAllWindows().at(-1).webContents
     win.executeJavaScript("console.group('Saving')")
     win.executeJavaScript("console.info('Saving in progress...')")         
-    var p=path.join(__dirname,"temp/text.txt")
-    if(args) 
-        fs.writeFile(p,args,(e)=>{
-            if(e)return})
-    else
-        fs.readFile(p,(e,data)=>{
-            if(e)return})
+    fs.readFile(__dirname+"/temp/"+args["name"],(e,d)=>{
+        if(e){
+            win.executeJavaScript("console.log('No path selected.')")
+            return}
+        fs.writeFile(d,args["data"],(e)=>{
+            if(e)return})})
     //if(!temp.path(args["name"]))popout([580,300],"resources/folders.html")
     //else{
     win.executeJavaScript("console.info('Saving completed.')")
